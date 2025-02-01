@@ -30,6 +30,11 @@ const social = [
         icon: 'email',
         link: 'aydennguyen604@gmail.com',
     },
+    {
+        name: 'Resume',
+        icon: 'resume',
+        link: '/files/resume.pdf',
+    }
 ]
 
 const home = {
