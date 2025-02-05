@@ -95,14 +95,14 @@ const about = {
                     {
                         src: '/images/experience/aero1.jpg',
                         alt: 'UBC AeroDesign',
-                        width: 28,
-                        height: 20
+                        width: 20,
+                        height: 12
                     },
                     {
                         src: '/images/experience/aero2.jpg',
                         alt: 'UBC AeroDesign',
                         width: 20,
-                        height: 28
+                        height: 24
                     }
                  ]
             },
@@ -119,7 +119,7 @@ const about = {
                     {
                         src: '/images/experience/free1.jpg',
                         alt: 'Free Geek Vancouver',
-                        width: 28,
+                        width: 20,
                         height: 20
                     }
                  ]
