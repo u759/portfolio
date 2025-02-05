@@ -28,7 +28,7 @@ const social = [
     {
         name: 'Email',
         icon: 'email',
-        link: 'aydennguyen604@gmail.com',
+        link: 'mailto:aydennguyen604@gmail.com',
     },
     {
         name: 'Resume',
