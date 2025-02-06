@@ -1,4 +1,4 @@
-const baseURL = 'demo.magic-portfolio.com'
+const baseURL = 'ayng.dev'
 
 const routes = {
     '/':   true,
