@@ -141,11 +141,11 @@ export default async function RootLayout({
 						fillWidth minHeight="0">
 						<RouteGuard>
 							{children}
-							<Analytics />
 						</RouteGuard>
 					</Flex>
 				</Flex>
 				<Footer/>
+				<Analytics />
 			</Flex>
 		</Flex>
 	);
