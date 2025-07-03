@@ -59,35 +59,40 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>You actually made it here? Thanks for checking out my portfolio! I'm Ayden, a 2nd year Computer Engineering Student at UBC. I'm a huge fan of design, tech, and aviation. I also love Singaporean hawker food.</>
+        description: <>A place for me to list my experience and projects.</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Experience',
         experiences: [
             {
-                company: 'University of British Columbia - Department of Computer Science',
-                timeframe: 'Sept - Dec 2023',
-                role: 'Examination Invigilator',
+                company: 'BC Liquor Distribution Branch (BCLDB)',
+                timeframe: 'May 2025 - present',
+                role: 'Middleware Administrator Assistant',
                 achievements: [
-                    <>Responsible for invigilating computer science exams. Assisted students with technical issues and provided support during exams.</>,
-                    <>Designed a Python script to schedule proctors based on exam availability and location.</>
+                    <>Maintaining DEV and TEST infrastructure for the BCLDB, ensuring up-to-date security patches on Red Hat Enterprise systems.</>,
+                    <>Administering Java deployments via Oracle Service Bus, Wildfly, Service Oriented Architecture, and Glowroot, accelerating developer testing and integration.</>,
+                    <>Ensuring access to PostgreSQL, Microsoft SQL, and Oracle SQL databases, supporting developer and retail operations.</>,
+                    <>Monitoring and troubleshooting infrastructure, ensuring data integrity and reliability for the IT team.</>
                 ],
-                images: [ // optional: leave the array empty if you don't want to display images
-                    {
-                        src: '/images/experience/ubccs.jpg',
-                        alt: 'UBC Computer Science',
-                        width: 16,
-                        height: 9
-                    }
-                ]
+                images: []
             },
             {
                 company: 'UBC AeroDesign - University Engineering Design Team',
-                timeframe: '2023 - present',
+                timeframe: 'June 2025 - present',
+                role: 'Firmware Developer',
+                achievements: [
+                    <>Developing flight control firmware for vertical takeoff/landing (VTOL) electric aircraft.</>,
+                    <>Implementing C code on an STM32H7 and custom power electronics for automomous flight, takeoff/landing, and waypoint navigation with PID, GPS, IMU, Airspeed, and Barometer sensor fusion.</>,
+                    <>Optimizing telemetry for ground-based monitoring.</>
+                ],
+                images: []
+            },
+            {
+                timeframe: 'Sept. 2023 - June 2025',
                 role: 'Power & Controls Lead',
                 achievements: [
-                    <>Developing a high-performance electric aircraft to compete at SAE AeroDesign West. Achieved the highest thrust-to-weight ratio in team history.</>,
+                    <>Engineering a high-performance electric aircraft to compete at SAE AeroDesign West. Achieved the highest thrust-to-weight ratio in team history.</>,
                     <>Leading a team of 6 students to design a high-performance electric propulsion system. Spearheading the development of PCBs for propulsion testing and power distribution.</>,
                     <>Implemented C code for an embedded Arduino system to test propulsion performance.</>
                 ],
@@ -105,6 +110,23 @@ const about = {
                         height: 24
                     }
                  ]
+            },
+            {
+                company: 'University of British Columbia - Department of Computer Science',
+                timeframe: 'Sept - Dec 2023',
+                role: 'Examination Invigilator',
+                achievements: [
+                    <>Responsible for invigilating computer science exams. Assisted students with technical issues and provided support during exams.</>,
+                    <>Designed a Python script to schedule proctors based on exam availability and location.</>
+                ],
+                images: [ // optional: leave the array empty if you don't want to display images
+                    {
+                        src: '/images/experience/ubccs.jpg',
+                        alt: 'UBC Computer Science',
+                        width: 16,
+                        height: 9
+                    }
+                ]
             },
             {
                 company: 'Free Geek Vancouver',
@@ -152,8 +174,8 @@ const about = {
                 ]
             },
             {
-                title: 'NoSQL Databases',
-                description: <>Implemented MongoDB and custom JSON-based databases for web and desktop applications.</>,
+                title: 'SQL and NoSQL',
+                description: <>PostgreSQL/indices for full stack web-app using Supabase, MongoDB to store local events.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
                 ]
@@ -166,15 +188,15 @@ const about = {
                 ]
             },
             {
-                title: 'DevOps',
-                description: <>Experience with Docker, Virtual Machines, and Linux.</>,
+                title: 'DevOps and Middleware',
+                description: <>Experienced in Docker, Virtualization, Linux, and Service Oriented Architecture. Proficient in Debian/Red Hat systems for software deployment.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
                 ]
             },
             {
                 title: 'Embedded Systems',
-                description: <>Programming in C for ATmega328P, ESP32, and Raspberry Pi.</>,
+                description: <>Programming in C for STM32, ATmega328P, ESP32, and Raspberry Pi.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
                 ]
@@ -185,7 +207,7 @@ const about = {
 
 const blog = {
     label: 'Blog',
-    title: 'I will put something here soon...',
+    title: 'Random stuff...',
     description: `Read what ${person.name} has been up to recently`
     // Create new blog posts by adding a new .mdx file to app/blog/posts
     // All posts will be listed on the /blog route

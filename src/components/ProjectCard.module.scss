@@ -1,0 +1,8 @@
+.hover {
+    transition: var(--transition-micro-medium);
+
+    &:hover {
+        color: var(--brand-on-background-medium);
+        transform: translateX(var(--static-space-4));
+    }
+}
