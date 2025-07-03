@@ -1,6 +1,7 @@
 import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
 import { baseURL } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
+import { Terminal } from '@/components';
 import styles from '@/components/about/about.module.scss'
 import { person, about, social } from '@/app/resources/content';
 
@@ -170,10 +171,24 @@ export default function About() {
                         <Flex
                             direction="column"
                             textVariant="body-default-l"
-                            fillWidth gap="m" marginBottom="xl">
+                            fillWidth gap="m" marginBottom="m">
                             {about.intro.description}
                         </Flex>
                     )}
+
+                    {/* Interactive Terminal Section */}
+                    <Flex
+                        direction="column"
+                        fillWidth
+                        marginBottom="xl">
+                        <Heading
+                            as="h2"
+                            variant="display-strong-s"
+                            marginBottom="m">
+                            Hello World!
+                        </Heading>
+                        <Terminal />
+                    </Flex>
 
                     { about.work.display && (
                         <>
