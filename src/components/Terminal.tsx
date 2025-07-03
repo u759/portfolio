@@ -16,16 +16,43 @@ interface TerminalProps {
 
 const Terminal: React.FC<TerminalProps> = ({ className }) => {
     const [lines, setLines] = useState<TerminalLine[]>([
+        { type: 'output', text: 'Welcome to Ayden\'s interactive terminal!' },
         { type: 'output', text: 'Type "help" to see available commands.' },
+        { type: 'output', text: '' },
     ]);
     const [currentInput, setCurrentInput] = useState('');
     const [commandHistory, setCommandHistory] = useState<string[]>([]);
     const [historyIndex, setHistoryIndex] = useState(-1);
     const [isTyping, setIsTyping] = useState(false);
     const [cursorPosition, setCursorPosition] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const terminalRef = useRef<HTMLDivElement>(null);
     const hiddenSpanRef = useRef<HTMLSpanElement>(null);
+
+    // Detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                                   window.innerWidth <= 768;
+            setIsMobile(isMobileDevice);
+            
+            // Set appropriate welcome message based on device
+            if (isMobileDevice) {
+                setLines([
+                    { type: 'output', text: 'Welcome to Ayden\'s interactive terminal!' },
+                    { type: 'output', text: 'Tap the input area below to start typing.' },
+                    { type: 'output', text: 'Type "help" to see available commands.' },
+                    { type: 'output', text: '' },
+                ]);
+            }
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const commands = {
         help: {
@@ -118,10 +145,10 @@ const Terminal: React.FC<TerminalProps> = ({ className }) => {
                 '🛠️ Technical Skills:',
                 '',
                 '💻 Programming Languages:',
-                '   • C/C++ (Advanced) - Embedded systems, firmware',
-                '   • Python (Advanced) - Automation, data analysis',
-                '   • TypeScript/JavaScript (Intermediate) - Web development',
-                '   • Java (Intermediate) - Enterprise applications',
+                '   • C/C++ (Intermediate) - Operating Systems, firmware',
+                '   • Java (Intermediate) - Backend applications',
+                '   • TypeScript/JavaScript (Beginner) - Web development',
+                '   • Python (Beginner) - Automation, scripting',
                 '',
                 '🔧 Technologies & Tools:',
                 '   • STM32 microcontrollers',
@@ -403,9 +430,9 @@ const Terminal: React.FC<TerminalProps> = ({ className }) => {
         }
     }, [lines]);
 
-    // Focus input when terminal is clicked
+    // Focus input when terminal is clicked (desktop only)
     const handleTerminalClick = () => {
-        if (inputRef.current && !isTyping) {
+        if (inputRef.current && !isTyping && !isMobile) {
             inputRef.current.focus();
         }
     };
@@ -455,8 +482,8 @@ const Terminal: React.FC<TerminalProps> = ({ className }) => {
                                 onKeyUp={updateCursorPosition}
                                 onClick={updateCursorPosition}
                                 className={styles.input}
-                                placeholder="Type a command..."
-                                autoFocus
+                                placeholder={isMobile ? "Tap here and type a command..." : "Type a command..."}
+                                autoFocus={!isMobile} // Only auto-focus on desktop
                                 disabled={isTyping}
                             />
                             <span 
